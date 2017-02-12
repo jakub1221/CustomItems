@@ -1,0 +1,8 @@
+name: ${project.name}
+main: org.jakub1221.customitems.CustomItems
+version: ${project.version}
+description: ${project.description}
+commands:
+    ci:
+      description: Main command.
+      usage: /ci help

@@ -19,32 +19,21 @@ public class CustomItems extends JavaPlugin implements Listener{
 	public String build="0602";
 	private ConfigDB configDB=null;
 	private ItemHandler itemHandler=null;
-	private static API api=null;
+	private API api=null;
 	private PlayerData playerData=null;
 	private Recipes recipes=null;
-	private static CustomItems instance=null;
 	
 	private Logger log = Logger.getLogger("Minecraft");
 	
 	public void onEnable(){
 		
 		// Init
-		
-		instance=this;
+
 		configDB=new ConfigDB(this);
 		itemHandler=new ItemHandler(this);
 		api=new API(this);
 		playerData=new PlayerData(this);
 		recipes=new Recipes(this);
-		
-		// Metrics
-		
-		try {
-		    Metrics metrics = new Metrics(this);
-		    metrics.start();
-		} catch (IOException e) {
-		 
-		}
 		
 		// Config startup
 		
@@ -91,7 +80,7 @@ public class CustomItems extends JavaPlugin implements Listener{
 		return this.log;
 	}
 	
-	public static API getAPI(){
+	public API getAPI(){
 		return api;
 	}
 	
@@ -101,10 +90,6 @@ public class CustomItems extends JavaPlugin implements Listener{
 	
 	public Recipes getRecipes(){
 		return this.recipes;
-	}
-	
-	public static CustomItems getInstance(){
-	    return instance;
 	}
 	
 }
